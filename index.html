@@ -8,169 +8,29 @@
 <title>BILIGI HUB</title>
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background: #080d16;
-  color: white;
-  font-family: Arial, sans-serif;
-}
-
-header {
-  background: #101927;
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 15px;
-  border-bottom: 1px solid #1c3040;
-}
-
-.logo {
-  color: #00d9ee;
-  font-size: 27px;
-  font-weight: bold;
-}
-
-button {
-  background: #00bcd4;
-  color: #001018;
-  border: none;
-  padding: 13px 20px;
-  border-radius: 10px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-button:hover {
-  background: #00e5ff;
-}
-
-#userInfo {
-  display: none;
-  align-items: center;
-  gap: 10px;
-  font-size: 13px;
-}
-
-#userPhoto {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-}
-
-.container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 25px;
-}
-
-.hero {
-  background: linear-gradient(135deg,#071d2c,#101c35);
-  padding: 55px 30px;
-  border-radius: 25px;
-  margin: 40px 0;
-  border: 1px solid #142c40;
-}
-
-.hero h1 {
-  font-size: 35px;
-  margin-bottom: 20px;
-}
-
-.hero p {
-  color: #aebdca;
-  line-height: 1.8;
-  font-size: 17px;
-  max-width: 650px;
-}
-
-h2 {
-  margin: 35px 0 20px;
-  color: #00d9ee;
-}
-
-.search {
-  width: 100%;
-  padding: 16px;
-  background: #111d2b;
-  color: white;
-  border: 1px solid #254153;
-  border-radius: 12px;
-  font-size: 16px;
-  margin: 15px 0;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
-  gap: 20px;
-}
-
-.card {
-  background: #101925;
-  padding: 25px;
-  border: 1px solid #1c2e3e;
-  border-radius: 18px;
-  transition: .3s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  border-color: #00d9ee;
-}
-
-.card h3 {
-  color: #00d9ee;
-  font-size: 21px;
-  margin-bottom: 18px;
-}
-
-.card p {
-  color: #aebdca;
-  line-height: 1.7;
-  margin-bottom: 20px;
-}
-
-.price {
-  color: #00e5a0;
-  font-weight: bold;
-  margin-bottom: 15px;
-}
-
-footer {
-  text-align: center;
-  padding: 30px;
-  margin-top: 50px;
-  color: #8294a5;
-  background: #101925;
-}
-
-.hidden {
-  display: none !important;
-}
-
-#loginStatus {
-  color: #00e5a0;
-  margin-top: 15px;
-}
-
-@media(max-width:600px) {
-  .hero h1 {
-    font-size: 27px;
-  }
-  .container {
-    padding: 16px;
-  }
-  header {
-    padding: 16px;
-  }
-}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#080d16;color:#fff;font-family:Arial,sans-serif}
+header{background:#101927;padding:18px 5%;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;border-bottom:1px solid #203344}
+.logo{font-size:27px;font-weight:bold;color:#00d9ee}
+button{background:#00c6dc;color:#001018;border:0;padding:13px 19px;border-radius:10px;font-weight:bold;cursor:pointer}
+button:hover{background:#00eaff}
+.container{max-width:1200px;margin:auto;padding:25px}
+.hero{background:linear-gradient(135deg,#09283b,#101c35);padding:45px 30px;border-radius:22px;margin:40px 0;border:1px solid #17374a}
+.hero h1{font-size:34px;margin-bottom:20px}
+.hero p{color:#b8c8d5;line-height:1.8;font-size:17px}
+h2{margin:35px 0 20px;color:#00d9ee}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.card{background:#101925;border:1px solid #203447;padding:25px;border-radius:18px;transition:.2s}
+.card:hover{border-color:#00d9ee;transform:translateY(-4px)}
+.card h3{color:#00d9ee;margin-bottom:17px;font-size:21px}
+.card p{color:#b8c8d5;line-height:1.7;margin-bottom:20px}
+.search{width:100%;padding:16px;background:#111d2b;color:white;border:1px solid #294457;border-radius:12px;font-size:16px;margin:15px 0}
+.price{color:#00e5a0;margin-bottom:15px;font-weight:bold}
+#userInfo{display:none;align-items:center;gap:10px}
+#userPhoto{width:38px;height:38px;border-radius:50%}
+#loginStatus{margin-top:15px;color:#00e5a0}
+footer{text-align:center;background:#101925;color:#9aabb9;padding:30px;margin-top:50px;line-height:2}
+@media(max-width:600px){.hero h1{font-size:27px}.container{padding:16px}}
 </style>
 </head>
 
@@ -179,12 +39,10 @@ footer {
 <header>
   <div class="logo">BILIGI HUB</div>
 
-  <button id="loginBtn" onclick="loginGoogle()">
-    Google Login
-  </button>
+  <button id="loginBtn" onclick="loginGoogle()">Google Login</button>
 
   <div id="userInfo">
-    <img id="userPhoto" src="" alt="User">
+    <img id="userPhoto" src="" alt="Profile">
     <span id="userName"></span>
     <button onclick="logout()">Logout</button>
   </div>
@@ -192,286 +50,211 @@ footer {
 
 <main class="container">
 
-  <section class="hero">
-    <h1>Karibu BILIGI HUB 🚀</h1>
+<section class="hero">
+  <h1>Karibu BILIGI HUB 🚀</h1>
+  <p>
+    Mfumo wako wa kidigitali unaokusanya huduma
+    mbalimbali sehemu moja. Pata huduma za bure
+    na za kulipia kwa urahisi.
+  </p>
+  <p id="loginStatus"></p>
+</section>
 
-    <p>
-      Mfumo wako wa kidigitali unaokusanya huduma
-      mbalimbali sehemu moja. Pata huduma za bure
-      na za kulipia kwa urahisi.
-    </p>
+<h2>Huduma Zetu</h2>
 
-    <p id="loginStatus"></p>
-  </section>
+<input class="search" id="searchInput"
+placeholder="🔍 Tafuta huduma hapa...">
 
-  <h2>Huduma zetu</h2>
+<h2>Huduma za Bure</h2>
 
-  <input
-    class="search"
-    type="search"
-    id="searchInput"
-    placeholder="Tafuta huduma hapa..."
-  >
+<div class="grid">
 
-  <h2>Huduma za bure</h2>
+<div class="card">
+<h3>📚 Elimu</h3>
+<p>Rasilimali za kujifunza na kusaidia wanafunzi.</p>
+<button onclick="openService('Elimu')">Fungua</button>
+</div>
 
-  <div class="grid" id="freeServices">
+<div class="card">
+<h3>🎮 Games</h3>
+<p>Habari na taarifa za michezo ya simu na kompyuta.</p>
+<button onclick="openService('Games')">Fungua</button>
+</div>
 
-    <div class="card">
-      <h3>📚 Elimu</h3>
-      <p>
-        Rasilimali za kujifunza na kusaidia wanafunzi.
-      </p>
-      <button onclick="openService('Elimu')">Fungua</button>
-    </div>
+<div class="card">
+<h3>🎵 Music</h3>
+<p>Habari za muziki, production na burudani.</p>
+<button onclick="openService('Music')">Fungua</button>
+</div>
 
-    <div class="card">
-      <h3>🎮 Games</h3>
-      <p>
-        Habari na taarifa za michezo ya simu na kompyuta.
-      </p>
-      <button onclick="openService('Games')">Fungua</button>
-    </div>
+<div class="card">
+<h3>📰 Habari</h3>
+<p>Pata taarifa na habari mbalimbali.</p>
+<button onclick="openService('Habari')">Fungua</button>
+</div>
 
-    <div class="card">
-      <h3>🎵 Music</h3>
-      <p>
-        Habari za muziki, production na burudani.
-      </p>
-      <button onclick="openService('Music')">Fungua</button>
-    </div>
+</div>
 
-    <div class="card">
-      <h3>📰 Habari</h3>
-      <p>
-        Pata taarifa na habari mbalimbali.
-      </p>
-      <button onclick="openService('Habari')">Fungua</button>
-    </div>
+<h2>Huduma za Kulipia</h2>
 
-  </div>
+<div class="grid">
 
-  <h2>Huduma za kulipia</h2>
+<div class="card">
+<h3>💻 Website Design</h3>
+<p>Huduma za kutengeneza website za biashara.</p>
+<div class="price">Huduma ya kulipia</div>
+<button onclick="openService('Website Design')">Angalia</button>
+</div>
 
-  <div class="grid" id="paidServices">
+<div class="card">
+<h3>🎨 Graphic Design</h3>
+<p>Logo, poster, banner na cover za muziki.</p>
+<div class="price">Huduma ya kulipia</div>
+<button onclick="openService('Graphic Design')">Angalia</button>
+</div>
 
-    <div class="card">
-      <h3>💻 Website Design</h3>
-      <p>
-        Huduma za kutengeneza website za biashara
-        na matumizi binafsi.
-      </p>
-      <div class="price">Huduma ya kulipia</div>
-      <button onclick="openService('Website Design')">
-        Angalia
-      </button>
-    </div>
+<div class="card">
+<h3>📱 App Development</h3>
+<p>Huduma za kutengeneza application za Android.</p>
+<div class="price">Huduma ya kulipia</div>
+<button onclick="openService('App Development')">Angalia</button>
+</div>
 
-    <div class="card">
-      <h3>🎨 Graphic Design</h3>
-      <p>
-        Tengeneza logo, poster, banner na cover za muziki.
-      </p>
-      <div class="price">Huduma ya kulipia</div>
-      <button onclick="openService('Graphic Design')">
-        Angalia
-      </button>
-    </div>
+<div class="card">
+<h3>🛒 Online Market</h3>
+<p>Sehemu ya huduma na bidhaa mbalimbali.</p>
+<div class="price">Huduma ya kulipia</div>
+<button onclick="openService('Online Market')">Angalia</button>
+</div>
 
-    <div class="card">
-      <h3>📱 App Development</h3>
-      <p>
-        Huduma za kutengeneza application za Android.
-      </p>
-      <div class="price">Huduma ya kulipia</div>
-      <button onclick="openService('App Development')">
-        Angalia
-      </button>
-    </div>
+</div>
 
-    <div class="card">
-      <h3>🛒 Online Market</h3>
-      <p>
-        Sehemu ya huduma na bidhaa mbalimbali.
-      </p>
-      <div class="price">Huduma ya kulipia</div>
-      <button onclick="openService('Online Market')">
-        Angalia
-      </button>
-    </div>
+<h2>Kuhusu BILIGI HUB</h2>
 
-  </div>
-
-  <h2>Kuhusu BILIGI HUB</h2>
-
-  <div class="card">
-    <h3>Karibu kwenye mfumo wetu</h3>
-    <p>
-      BILIGI HUB ni mfumo wa kidigitali unaolenga
-      kuunganisha huduma mbalimbali katika sehemu moja.
-      Lengo letu ni kurahisisha upatikanaji wa huduma
-      za elimu, teknolojia, muziki, michezo na biashara.
-    </p>
-  </div>
+<div class="card">
+<h3>Karibu kwenye mfumo wetu</h3>
+<p>
+BILIGI HUB ni mfumo wa kidigitali unaolenga
+kuunganisha huduma mbalimbali katika sehemu moja.
+Lengo letu ni kurahisisha upatikanaji wa huduma
+za elimu, teknolojia, muziki, michezo na biashara.
+</p>
+</div>
 
 </main>
 
 <footer>
-  <p>© 2026 BILIGI HUB. All Rights Reserved.</p>
-  <p>Technology • Education • Business • Entertainment</p>
+<p>© 2026 BILIGI HUB. All Rights Reserved.</p>
+<p>Technology • Education • Business • Entertainment</p>
 </footer>
 
 <script type="module">
 
-import { initializeApp }
+import {initializeApp}
 from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
 
 import {
-  getAuth,
-  GoogleAuthProvider,
-  signInWithPopup,
-  signOut,
-  onAuthStateChanged
+getAuth,
+GoogleAuthProvider,
+signInWithPopup,
+signOut,
+onAuthStateChanged
 }
 from "https://www.gstatic.com/firebasejs/12.5.0/firebase-auth.js";
 
 
-// FIREBASE CONFIGURATION
+// FIREBASE CONFIG - BILIGI HUB
 
 const firebaseConfig = {
-
-  apiKey: "WEKA_API_KEY_YAKO_HALISI_HAPA",
-
-  authDomain: "biligi-hub.firebaseapp.com",
-
-  projectId: "biligi-hub",
-
-  storageBucket: "biligi-hub.firebasestorage.app",
-
-  messagingSenderId: "317545770212",
-
-  appId: "1:317545770212:web:0fc9fad24ed7abcb9610f1",
-
-  measurementId: "G-B9R7F42KCV"
-
+apiKey: "AIzaSyCGuBx0iBQS7LGUyIZbwZnrDeR87sb5-aw",
+authDomain: "biligi-hub.firebaseapp.com",
+projectId: "biligi-hub",
+storageBucket: "biligi-hub.firebasestorage.app",
+messagingSenderId: "317545770212",
+appId: "1:317545770212:web:0fc9fad24ed7abcb9610f1",
+measurementId: "G-B9R7F42KCV"
 };
 
-
-// KUANZISHA FIREBASE
+// INITIALIZE FIREBASE
 
 const app = initializeApp(firebaseConfig);
-
 const auth = getAuth(app);
-
 const provider = new GoogleAuthProvider();
 
 
 // GOOGLE LOGIN
 
-window.loginGoogle = async function() {
+window.loginGoogle = async function(){
+try{
+document.getElementById("loginStatus").innerText =
+"Inaunganisha Google Account...";
 
-  const status = document.getElementById("loginStatus");
+await signInWithPopup(auth,provider);
 
-  try {
+document.getElementById("loginStatus").innerText =
+"Umefanikiwa kuingia!";
 
-    status.innerText = "Inaunganisha Google Account...";
-
-    await signInWithPopup(auth, provider);
-
-    status.innerText = "Umeingia kikamilifu!";
-
-  } catch(error) {
-
-    console.error(error);
-
-    status.innerText = "Login imekataa: " + error.message;
-
-    alert("Login imekataa: " + error.message);
-
-  }
-
+}catch(error){
+console.error(error);
+document.getElementById("loginStatus").innerText =
+"Login imekataa: "+error.message;
+alert("Firebase Error: "+error.message);
+}
 };
 
 
 // LOGOUT
 
-window.logout = async function() {
-
-  try {
-
-    await signOut(auth);
-
-    alert("Umetoka kwenye akaunti.");
-
-  } catch(error) {
-
-    alert("Tatizo: " + error.message);
-
-  }
-
+window.logout = async function(){
+try{
+await signOut(auth);
+}catch(error){
+alert(error.message);
+}
 };
 
 
-// KUANGALIA MTUMIAJI
+// USER ACCOUNT
 
-onAuthStateChanged(auth, (user) => {
+onAuthStateChanged(auth,(user)=>{
+const loginBtn=document.getElementById("loginBtn");
+const userInfo=document.getElementById("userInfo");
 
-  const loginBtn = document.getElementById("loginBtn");
+if(user){
+loginBtn.style.display="none";
+userInfo.style.display="flex";
+document.getElementById("userName").innerText =
+user.displayName || user.email;
 
-  const userInfo = document.getElementById("userInfo");
-
-  if(user) {
-
-    loginBtn.style.display = "none";
-
-    userInfo.style.display = "flex";
-
-    document.getElementById("userName").innerText =
-      user.displayName || user.email;
-
-    document.getElementById("userPhoto").src =
-      user.photoURL || "";
-
-  } else {
-
-    loginBtn.style.display = "block";
-
-    userInfo.style.display = "none";
-
-    document.getElementById("loginStatus").innerText = "";
-
-  }
-
+document.getElementById("userPhoto").src =
+user.photoURL || "";
+}else{
+loginBtn.style.display="block";
+userInfo.style.display="none";
+}
 });
 
 
-// KUFUNGUA HUDUMA
+// SERVICES
 
-window.openService = function(name) {
-
-  alert(
-    "Karibu kwenye huduma ya " + name +
-    ". Huduma hii itaunganishwa kikamilifu katika hatua zinazofuata."
-  );
-
+window.openService=function(name){
+alert("Karibu kwenye huduma ya "+name+
+". Huduma hii itaunganishwa kikamilifu.");
 };
 
 
 // SEARCH
 
 document.getElementById("searchInput")
-.addEventListener("input", function() {
+.addEventListener("input",function(){
 
-  const value = this.value.toLowerCase();
+const value=this.value.toLowerCase();
 
-  document.querySelectorAll(".card").forEach(card => {
-
-    const matches = card.innerText.toLowerCase()
-      .includes(value);
-
-    card.style.display = matches ? "block" : "none";
-
-  });
+document.querySelectorAll(".card").forEach(card=>{
+card.style.display=
+card.innerText.toLowerCase().includes(value)
+?"block":"none";
+});
 
 });
 
