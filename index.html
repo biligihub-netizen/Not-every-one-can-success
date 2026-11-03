@@ -8,28 +8,27 @@
 <title>BILIGI HUB</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:#080d16;color:#fff;font-family:Arial,sans-serif}
-header{background:#101927;padding:18px 5%;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;border-bottom:1px solid #203344}
-.logo{font-size:27px;font-weight:bold;color:#00d9ee}
-button{background:#00c6dc;color:#001018;border:0;padding:13px 19px;border-radius:10px;font-weight:bold;cursor:pointer}
-button:hover{background:#00eaff}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#080d16;color:white;font-family:Arial,sans-serif}
+header{background:#111a28;padding:18px 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px;border-bottom:1px solid #24384b}
+.logo{font-size:26px;font-weight:bold;color:#00e5ff}
+button{background:#00c9df;color:#001018;border:0;padding:13px 18px;border-radius:10px;font-weight:bold;cursor:pointer}
+button:hover{background:#00edff}
 .container{max-width:1200px;margin:auto;padding:25px}
-.hero{background:linear-gradient(135deg,#09283b,#101c35);padding:45px 30px;border-radius:22px;margin:40px 0;border:1px solid #17374a}
-.hero h1{font-size:34px;margin-bottom:20px}
-.hero p{color:#b8c8d5;line-height:1.8;font-size:17px}
-h2{margin:35px 0 20px;color:#00d9ee}
+.hero{background:linear-gradient(135deg,#082a3c,#15203b);padding:45px 25px;border-radius:22px;margin:35px 0;border:1px solid #244257}
+.hero h1{font-size:34px;margin-bottom:18px}
+.hero p{color:#c0cfda;line-height:1.8}
+h2{color:#00e5ff;margin:35px 0 20px}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
-.card{background:#101925;border:1px solid #203447;padding:25px;border-radius:18px;transition:.2s}
-.card:hover{border-color:#00d9ee;transform:translateY(-4px)}
-.card h3{color:#00d9ee;margin-bottom:17px;font-size:21px}
-.card p{color:#b8c8d5;line-height:1.7;margin-bottom:20px}
-.search{width:100%;padding:16px;background:#111d2b;color:white;border:1px solid #294457;border-radius:12px;font-size:16px;margin:15px 0}
-.price{color:#00e5a0;margin-bottom:15px;font-weight:bold}
+.card{background:#111c2a;padding:24px;border:1px solid #24384b;border-radius:17px}
+.card h3{color:#00d9ee;margin-bottom:15px}
+.card p{color:#bdcbd6;line-height:1.7;margin-bottom:20px}
+.search{width:100%;padding:15px;background:#111c2a;color:white;border:1px solid #29465b;border-radius:12px;font-size:16px;margin:15px 0}
 #userInfo{display:none;align-items:center;gap:10px}
 #userPhoto{width:38px;height:38px;border-radius:50%}
-#loginStatus{margin-top:15px;color:#00e5a0}
-footer{text-align:center;background:#101925;color:#9aabb9;padding:30px;margin-top:50px;line-height:2}
+#loginStatus{margin-top:15px;color:#00e5a0;overflow-wrap:anywhere}
+footer{background:#111a28;text-align:center;padding:30px;margin-top:50px;color:#9cabb9;line-height:2}
+.price{color:#00e5a0;font-weight:bold;margin-bottom:15px}
 @media(max-width:600px){.hero h1{font-size:27px}.container{padding:16px}}
 </style>
 </head>
@@ -37,92 +36,92 @@ footer{text-align:center;background:#101925;color:#9aabb9;padding:30px;margin-to
 <body>
 
 <header>
-  <div class="logo">BILIGI HUB</div>
+<div class="logo">BILIGI HUB</div>
 
-  <button id="loginBtn" onclick="loginGoogle()">Google Login</button>
+<button id="loginBtn" onclick="loginGoogle()">Google Login</button>
 
-  <div id="userInfo">
-    <img id="userPhoto" src="" alt="Profile">
-    <span id="userName"></span>
-    <button onclick="logout()">Logout</button>
-  </div>
+<div id="userInfo">
+<img id="userPhoto" src="" alt="Profile">
+<span id="userName"></span>
+<button onclick="logout()">Logout</button>
+</div>
 </header>
 
 <main class="container">
 
 <section class="hero">
-  <h1>Karibu BILIGI HUB 🚀</h1>
-  <p>
-    Mfumo wako wa kidigitali unaokusanya huduma
-    mbalimbali sehemu moja. Pata huduma za bure
-    na za kulipia kwa urahisi.
-  </p>
-  <p id="loginStatus"></p>
+<h1>Karibu BILIGI HUB 🚀</h1>
+<p>
+BILIGI HUB ni mfumo wa kidigitali unaokusanya
+huduma mbalimbali sehemu moja.
+Pata huduma za bure na za kulipia kwa urahisi.
+</p>
+<p id="loginStatus"></p>
 </section>
 
-<h2>Huduma Zetu</h2>
+<h2>Huduma zetu</h2>
 
 <input class="search" id="searchInput"
-placeholder="🔍 Tafuta huduma hapa...">
+placeholder="🔍 Tafuta huduma...">
 
-<h2>Huduma za Bure</h2>
+<h2>Huduma za bure</h2>
 
 <div class="grid">
 
 <div class="card">
 <h3>📚 Elimu</h3>
-<p>Rasilimali za kujifunza na kusaidia wanafunzi.</p>
+<p>Masomo, notes na past papers.</p>
 <button onclick="openService('Elimu')">Fungua</button>
 </div>
 
 <div class="card">
 <h3>🎮 Games</h3>
-<p>Habari na taarifa za michezo ya simu na kompyuta.</p>
+<p>Michezo ya Android na PC.</p>
 <button onclick="openService('Games')">Fungua</button>
 </div>
 
 <div class="card">
 <h3>🎵 Music</h3>
-<p>Habari za muziki, production na burudani.</p>
+<p>Muziki, beat making na production.</p>
 <button onclick="openService('Music')">Fungua</button>
 </div>
 
 <div class="card">
 <h3>📰 Habari</h3>
-<p>Pata taarifa na habari mbalimbali.</p>
+<p>Taarifa na habari mbalimbali.</p>
 <button onclick="openService('Habari')">Fungua</button>
 </div>
 
 </div>
 
-<h2>Huduma za Kulipia</h2>
+<h2>Huduma za kulipia</h2>
 
 <div class="grid">
 
 <div class="card">
 <h3>💻 Website Design</h3>
-<p>Huduma za kutengeneza website za biashara.</p>
+<p>Utengenezaji wa website.</p>
 <div class="price">Huduma ya kulipia</div>
 <button onclick="openService('Website Design')">Angalia</button>
 </div>
 
 <div class="card">
 <h3>🎨 Graphic Design</h3>
-<p>Logo, poster, banner na cover za muziki.</p>
+<p>Logo, poster na cover za muziki.</p>
 <div class="price">Huduma ya kulipia</div>
 <button onclick="openService('Graphic Design')">Angalia</button>
 </div>
 
 <div class="card">
 <h3>📱 App Development</h3>
-<p>Huduma za kutengeneza application za Android.</p>
+<p>Utengenezaji wa application.</p>
 <div class="price">Huduma ya kulipia</div>
 <button onclick="openService('App Development')">Angalia</button>
 </div>
 
 <div class="card">
 <h3>🛒 Online Market</h3>
-<p>Sehemu ya huduma na bidhaa mbalimbali.</p>
+<p>Huduma na bidhaa mbalimbali.</p>
 <div class="price">Huduma ya kulipia</div>
 <button onclick="openService('Online Market')">Angalia</button>
 </div>
@@ -132,26 +131,30 @@ placeholder="🔍 Tafuta huduma hapa...">
 <h2>Kuhusu BILIGI HUB</h2>
 
 <div class="card">
-<h3>Karibu kwenye mfumo wetu</h3>
+<h3>Teknolojia kwa kila mtu</h3>
 <p>
-BILIGI HUB ni mfumo wa kidigitali unaolenga
-kuunganisha huduma mbalimbali katika sehemu moja.
-Lengo letu ni kurahisisha upatikanaji wa huduma
-za elimu, teknolojia, muziki, michezo na biashara.
+Lengo la BILIGI HUB ni kuunganisha elimu,
+teknolojia, biashara na burudani sehemu moja.
 </p>
 </div>
 
 </main>
 
 <footer>
-<p>© 2026 BILIGI HUB. All Rights Reserved.</p>
-<p>Technology • Education • Business • Entertainment</p>
+© 2026 BILIGI HUB. All Rights Reserved.
+<br>
+Technology • Education • Business • Entertainment
 </footer>
 
 <script type="module">
 
+// FIREBASE SDK
+
 import {initializeApp}
 from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
+
+import {getAnalytics}
+from "https://www.gstatic.com/firebasejs/12.5.0/firebase-analytics.js";
 
 import {
 getAuth,
@@ -163,7 +166,7 @@ onAuthStateChanged
 from "https://www.gstatic.com/firebasejs/12.5.0/firebase-auth.js";
 
 
-// FIREBASE CONFIG - BILIGI HUB
+// FIREBASE CONFIGURATION YAKO
 
 const firebaseConfig = {
 apiKey: "AIzaSyCGuBx0iBQS7LGUyIZbwZnrDeR87sb5-aw",
@@ -175,85 +178,130 @@ appId: "1:317545770212:web:0fc9fad24ed7abcb9610f1",
 measurementId: "G-B9R7F42KCV"
 };
 
+
 // INITIALIZE FIREBASE
 
 const app = initializeApp(firebaseConfig);
+
 const auth = getAuth(app);
+
 const provider = new GoogleAuthProvider();
+
+provider.setCustomParameters({
+prompt: "select_account"
+});
+
+
+// ANALYTICS
+
+try {
+getAnalytics(app);
+} catch(error) {
+console.log("Analytics haijaanzishwa:",error);
+}
 
 
 // GOOGLE LOGIN
 
 window.loginGoogle = async function(){
-try{
-document.getElementById("loginStatus").innerText =
-"Inaunganisha Google Account...";
+
+const status = document.getElementById("loginStatus");
+
+try {
+
+status.innerText = "Inaunganisha Google Account...";
 
 await signInWithPopup(auth,provider);
 
-document.getElementById("loginStatus").innerText =
-"Umefanikiwa kuingia!";
+status.innerText = "Umefanikiwa kuingia!";
 
-}catch(error){
+} catch(error) {
+
 console.error(error);
-document.getElementById("loginStatus").innerText =
-"Login imekataa: "+error.message;
-alert("Firebase Error: "+error.message);
+
+status.innerText = "Login Error: " + error.code;
+
+alert("Google Login imekataa: " + error.message);
+
 }
+
 };
 
 
 // LOGOUT
 
 window.logout = async function(){
-try{
+
+try {
+
 await signOut(auth);
-}catch(error){
+
+document.getElementById("loginStatus").innerText =
+"Umetoka kwenye akaunti.";
+
+} catch(error) {
+
 alert(error.message);
+
 }
+
 };
 
 
 // USER ACCOUNT
 
 onAuthStateChanged(auth,(user)=>{
-const loginBtn=document.getElementById("loginBtn");
-const userInfo=document.getElementById("userInfo");
+
+const loginBtn = document.getElementById("loginBtn");
+
+const userInfo = document.getElementById("userInfo");
 
 if(user){
-loginBtn.style.display="none";
-userInfo.style.display="flex";
+
+loginBtn.style.display = "none";
+
+userInfo.style.display = "flex";
+
 document.getElementById("userName").innerText =
 user.displayName || user.email;
 
 document.getElementById("userPhoto").src =
 user.photoURL || "";
-}else{
-loginBtn.style.display="block";
-userInfo.style.display="none";
+
+} else {
+
+loginBtn.style.display = "block";
+
+userInfo.style.display = "none";
+
 }
+
 });
 
 
-// SERVICES
+// OPEN SERVICES
 
-window.openService=function(name){
-alert("Karibu kwenye huduma ya "+name+
-". Huduma hii itaunganishwa kikamilifu.");
+window.openService = function(name){
+
+alert("Karibu kwenye huduma ya " + name +
+". Huduma hii itaongezwa kikamilifu katika hatua zinazofuata.");
+
 };
 
 
-// SEARCH
+// SEARCH SERVICES
 
 document.getElementById("searchInput")
 .addEventListener("input",function(){
 
-const value=this.value.toLowerCase();
+const value = this.value.toLowerCase();
 
 document.querySelectorAll(".card").forEach(card=>{
-card.style.display=
+
+card.style.display =
 card.innerText.toLowerCase().includes(value)
-?"block":"none";
+? "block" : "none";
+
 });
 
 });
